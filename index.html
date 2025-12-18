@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Jerez | Importa de China sin Complicaciones</title>
+    <!-- Carga de Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar un font moderno (Inter) y colores corporativos -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1D4ED8', // Azul profesional
+                        'secondary': '#FBBF24', // Dorado/Ámbar para acentos
+                        'dark-bg': '#0F172A', // Fondo oscuro
+                        'light-bg': '#F8FAFC', // Fondo muy claro
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Fuente Inter desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base */
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* HERO - Contenedor del video de fondo y contenido */
+        .hero-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+
+        /* Video de Fondo */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Overlay oscuro para mejorar la lectura */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.75); /* Oscuro con transparencia */
+            z-index: 2;
+        }
+
+        /* Contenido del Hero sobre el video */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* CTA Principal con animación Pulse */
+        @keyframes pulse-cta {
+            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(251, 191, 36, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+        }
+        .cta-pulse {
+            animation: pulse-cta 2s infinite;
+        }
+
+        /* Estilos para las animaciones al scrollear (Fade-in / Slide-up) */
+        .animated-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo de sombra para tarjetas */
+        .card-shadow-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-shadow-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR - Fijo en la parte superior, minimalista -->
+    <header class="bg-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo / Nombre de Marca Personal -->
+            <a href="#" class="text-2xl font-bold text-dark-bg">DIEGO <span class="text-primary">JEREZ</span></a>
+            <!-- Botón de CTA (Agenda) -->
+            <a href="#contacto" class="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">
+                Contacto
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. SECCIÓN HERO (Video de Fondo, Título y CTA principal) -->
+    <section class="hero-container" id="hero">
+        <!-- Video de Fondo (Reemplazar URL por video de logística/puerto/Asia en loop) -->
+        <!-- NOTA: Se recomienda usar un video de fondo propio alojado en un CDN para mayor velocidad. -->
+        <video class="hero-video" autoplay loop muted playsinline>
+            <!-- URL de ejemplo para simular un video de fondo. Reemplazar por un MP4 real. -->
+            <source src="VIDEO2.mp4" type="video/mp4" onerror="this.parentNode.style.display='none';">
+        
+        </video>
+
+        <!-- Overlay Oscuro -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenido del Hero -->
+        <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                Empeza a importar de <span class="text-secondary">China</span> 
+            </h1>
+            <p class="text-xl sm:text-2xl mb-8 font-light max-w-3xl mx-auto">
+                Soy Diego Jerez, tu Despachante de Aduana y Socio Estratégico. Garantizo la rentabilidad y seguridad de tu cadena de suministro.
+            </p>
+            <!-- CTA Principal con animación Pulse y texto actualizado -->
+            <a href="#contacto" class="cta-pulse inline-block bg-secondary text-dark-bg font-bold text-lg py-4 px-10 rounded-xl uppercase tracking-wider shadow-xl hover:bg-yellow-500 transition duration-300">
+                Agendar mi Llamada Estratégica
+            </a>
+            <p class="mt-6 text-sm opacity-90">Consulta sin compromiso. Ahorra tiempo y dinero.</p>
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN PROBLEMA/SOLUCIÓN (Con animación de scroll) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-dark-bg mb-12">
+                De la Fábrica en China a tu Depósito, Sin Inconvenientes
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Columna del Problema -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-2">Tu Mayor Riesgo Ahora:</h3>
+                    <ul class="list-none space-y-4 text-gray-700">
+                        <li class="flex items-start card-shadow-hover p-4 rounded-lg bg-red-50">
+                            <!-- Icono de Advertencia -->
+                            <svg class="w-6 h-6 text-red-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.398 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            <p><strong class="font-medium">Sanciones Aduaneras:</strong> Errores en la clasificación arancelaria que causan multas costosas.</p>
+                        </li>
+                        <li class="flex items-start card-shadow-hover p-4 rounded-lg bg-red-50">
+                            <!-- Icono de Dinero -->
+                            <svg class="w-6 h-6 text-red-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V8m0 4v4m-6 1H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-1.5"></path></svg>
+                            <p><strong class="font-medium">Margen Reducido:</strong> No conocer el costo final real antes de la compra te quita ganancias.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna de la Solución -->
+                <div class="space-y-6 p-6 rounded-xl card-shadow-hover bg-blue-50">
+                    <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-2">Mi Garantía de Éxito:</h3>
+                    <ul class="list-none space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <!-- Icono de Chequeado -->
+                            <svg class="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.142-2.059-.422-3.036z"></path></svg>
+                            <p><strong class="font-medium">Planificación Arancelaria:</strong> Clasificación 100% segura para evitar demoras y multas.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <!-- Icono de Calendario -->
+                            <svg class="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h.01M16 11h.01M16 15h.01M12 15h.01M9 15h.01M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <p><strong class="font-medium">Timing y Logística:</strong> Coordinación integral para cumplir los plazos de entrega pactados.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NUEVA 2.5. SECCIÓN SOBRE MÍ (Marca Personal de Diego Jerez) -->
+    <section class="py-16 md:py-24 bg-light-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-dark-bg mb-12">
+                Conoce a <span class="text-primary">Diego Jerez</span>: Tu Despachante Personal
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Presentación Personal (Foto y Texto) -->
+                <div class="bg-white p-8 rounded-xl shadow-xl space-y-6">
+                    <img src="https://placehold.co/300x300/1D4ED8/ffffff?text=FOTO+PROFESIONAL+DIEGO" alt="Foto profesional de Diego Jerez" class="w-40 h-40 object-cover rounded-full mx-auto border-4 border-secondary shadow-lg">
+                    <p class="text-lg text-gray-700 leading-relaxed text-center">
+                        "Mi misión es simple: Eliminar el miedo a importar de China. Tras <span id="yearsOfExp">25</span> años en comercio exterior, sé exactamente dónde se pierden el tiempo y el dinero las empresas. Dejo de lado la burocracia para ofrecerte una solución directa y transparente, pensada para que tu negocio crezca."
+                    </p>
+                    <a href="#contacto" class="block text-center text-primary font-semibold hover:text-blue-700 transition duration-300">
+                        Hablemos de tu próximo embarque →
+                    </a>
+                </div>
+
+                <!-- Video de Presentación (Embed) -->
+                <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-2xl">
+                    <!-- Reemplazar con el código embed real de YouTube/Vimeo/etc. -->
+                    <div class="relative pt-[56.25%]"> <!-- Proporción 16:9 con Tailwind CSS -->
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-xl"
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&modestbranding=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="mt-2 text-sm text-center text-gray-500">Video: Introducción personal y filosofía de trabajo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. SECCIÓN PROCESO (Transparencia con animación de scroll) -->
+    <section class="py-16 md:py-24 bg-dark-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-secondary">
+                Metodología: Tu Ruta 100% Segura
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paso 1 -->
+                <div class="text-center p-6 bg-slate-800 rounded-xl card-shadow-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Diagnóstico y Costo Total</h3>
+                    <p class="text-gray-300">Analizamos el producto (Ficha técnica y Arancel) y te entregamos la hoja de costos final garantizada, antes de cualquier compromiso.</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="text-center p-6 bg-slate-800 rounded-xl card-shadow-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Ejecución y Seguimiento</h3>
+                    <p class="text-gray-300">Monitoreamos el embarque desde el puerto de salida en China. Pre-validación aduanera de toda la documentación FCL/LCL.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="text-center p-6 bg-slate-800 rounded-xl card-shadow-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Despacho y Logística Final</h3>
+                    <p class="text-gray-300">Despacho ágil en Aduana y coordinación de la entrega terrestre a tu depósito. El producto listo para vender.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA 4.5. SECCIÓN MÉTRICAS (Contador Animado) -->
+    <section class="py-16 md:py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <h2 class="text-3xl font-bold text-center mb-10">
+                Nuestros Resultados Hablan por Nosotros
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- Métrica 1: Clientes -->
+                <div class="p-4">
+                    <p class="text-4xl sm:text-5xl font-extrabold text-secondary mb-1">
+                        <span class="counter" data-target="500">0</span>+
+                    </p>
+                    <p class="text-lg font-semibold uppercase tracking-wider">Clientes Satisfechos</p>
+                </div>
+                <!-- Métrica 2: Años de Experiencia -->
+                <div class="p-4">
+                    <p class="text-4xl sm:text-5xl font-extrabold text-secondary mb-1">
+                        <span class="counter" data-target="25">0</span>+
+                    </p>
+                    <p class="text-lg font-semibold uppercase tracking-wider">Años de Trayectoria</p>
+                </div>
+                <!-- Métrica 3: Embarques -->
+                <div class="p-4">
+                    <p class="text-4xl sm:text-5xl font-extrabold text-secondary mb-1">
+                        <span class="counter" data-target="2500">0</span>+
+                    </p>
+                    <p class="text-lg font-semibold uppercase tracking-wider">Embarques Despachados</p>
+                </div>
+                <!-- Métrica 4: Ahorro Promedio -->
+                <div class="p-4">
+                    <p class="text-4xl sm:text-5xl font-extrabold text-secondary mb-1">
+                        <span class="counter" data-target="15">0</span>%
+                    </p>
+                    <p class="text-lg font-semibold uppercase tracking-wider">Ahorro Promedio en Costos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. SECCIÓN POR QUÉ ELEGIRNOS (Autoridad - Con animación de scroll) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-6">
+                        No Busques un Despachante, Busca un Socio Estratégico
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Mi conocimiento profundo de las regulaciones en Asia y América Latina me permite anticipar problemas antes de que afecten tu inversión. Mi enfoque es la rentabilidad de tu negocio.
+                    </p>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-start card-shadow-hover p-3 rounded-lg bg-blue-50">
+                            <!-- Icono de Rayo -->
+                            <svg class="w-6 h-6 text-secondary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <p><strong class="font-medium text-dark-bg">Pre-Liquidación Exclusiva:</strong> Costo total garantizado antes de la compra (FOB + fletes + Aduana = $ Total).</p>
+                        </li>
+                        <li class="flex items-start card-shadow-hover p-3 rounded-lg bg-blue-50">
+                            <!-- Icono de Candado -->
+                            <svg class="w-6 h-6 text-secondary mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                            <p><strong class="font-medium text-dark-bg">Gestión Proactiva de VUCE/LICENCIAS:</strong> Evitamos que tu carga quede varada por permisos faltantes.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Imagen Placeholder -->
+                <div class="order-1 md:order-2">
+                    <img src="https://placehold.co/600x400/1D4ED8/ffffff?text=Integridad+y+Procesos" alt="Imagen de Integridad y Procesos Aduaneros" class="rounded-xl object-cover w-full shadow-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1D4ED8/ffffff?text=Integridad+y+Procesos';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN FORMULARIO DE CONTACTO (CTA Final - Con animación de scroll) -->
+    <section id="contacto" class="py-16 md:py-24 bg-blue-50">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 animated-item">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary mb-4">
+                ¿Listo para Dejar de Preocuparte por la Aduana?
+            </h2>
+            <p class="text-center text-lg text-gray-600 mb-10">
+                Agenda tu llamada estratégica con Diego Jerez. Resuelve tus dudas y recibe tu pre-cálculo sin cargo.
+            </p>
+
+            <div class="bg-white p-8 rounded-xl shadow-2xl">
+                <form id="contactForm">
+                    <!-- Campo Nombre/Empresa -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre y/o Empresa</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+                    </div>
+
+                    <!-- Campo Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+                    </div>
+
+                    <!-- Campo Teléfono -->
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (WhatsApp)</label>
+                        <input type="tel" id="phone" name="phone"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+                    </div>
+
+                    <!-- Campo Mensaje (Motivo/Producto a importar) -->
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">¿Qué producto(s) planea importar de China?</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"></textarea>
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <button type="submit" id="submitButton"
+                            class="w-full cta-pulse bg-primary text-white font-bold py-3 rounded-lg hover:bg-blue-700 uppercase tracking-wider transition duration-300">
+                        Agendar Llamada Ahora
+                    </button>
+
+                    <!-- Mensaje de respuesta del formulario (éxito/error) -->
+                    <div id="responseMessage" class="mt-4 text-center font-medium hidden"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Legalidad y Redes Sociales) -->
+    <footer class="bg-dark-bg text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Iconos de Redes Sociales -->
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/XXXXXXXXXX" target="_blank" aria-label="WhatsApp de Diego Jerez" class="text-green-500 hover:text-green-400 transition duration-300">
+                    <!-- Icono WhatsApp SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" class="shadow-lg rounded-full p-0.5">
+                        <path d="M12.01 0C6.12 0 1.25 4.87 1.25 10.76c0 1.83.47 3.56 1.34 5.11L1 23l6.98-1.83c1.47.8 3.1 1.24 4.03 1.24C17.9 22.41 22.76 17.54 22.76 11.64 22.76 5.75 17.9 0 12.01 0zm4.5 15.65c-.17.3-.34.34-.6.54-.42.34-.82.68-1.28.68-.42 0-.82-.12-1.26-.25-2.02-.9-3.93-2.6-5.46-4.66-.46-.66-.96-1.57-.96-2.5 0-1.74 2.15-2.6 2.76-2.73.17-.03.3-.06.4-.06.27 0 .4.15.53.4.15.3.4 1.02.43 1.07.03.06.06.15.03.3-.03.15-.15.42-.32.65-.2.27-.37.45-.49.57-.12.1-.2.2-.24.32-.06.1-.06.18.06.32 0 0 1.05 1.76 2.65 3.2 1.2.98 2.15 1.3 2.5 1.45.33.15.46.12.7.07.27-.06.87-.36 1.05-.6.18-.26.3-.43.4-.49.12-.06.27-.1.4.03.18.15 1.14.6 1.34.7.2.1.3.15.35.25.06.12.06.2.03.32-.03.12-.22.3-.43.5-.03.04-.1.08-.13.12z"/>
+                    </svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/diegoxerez_aduanas" target="_blank" aria-label="Instagram de Diego Jerez" class="text-pink-500 hover:text-pink-400 transition duration-300">
+                    <!-- Icono Instagram SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" class="shadow-lg rounded-lg">
+                        <path d="M12 2.163c3.204 0 3.584.013 4.85.064 1.277.052 1.884.227 2.38.42 1.373.55 2.148 1.488 2.673 2.673.193.497.368 1.103.42 2.38.05 1.266.064 1.646.064 4.85s-.014 3.584-.064 4.85c-.052 1.277-.227 1.884-.42 2.38-.55 1.373-1.488 2.148-2.673 2.673-.497.193-1.103.368-2.38.42-1.266.05-1.646.064-4.85.064s-3.584-.014-4.85-.064c-1.277-.052-1.884-.227-2.38-.42-1.373-.55-2.148-1.488-2.673-2.673-.193-.497-.368-1.103-.42-2.38-.05-1.266-.064-1.646-.064-4.85s.014-3.584.064-4.85c.052-1.277.227-1.884.42-2.38.55-1.373 1.488-2.148 2.673-2.673.497-.193 1.103-.368 2.38-.42 1.266-.05 1.646-.064 4.85-.064zM12 16.7c-2.68 0-4.72-2.16-4.72-4.72 0-2.68 2.04-4.72 4.72-4.72 2.56 0 4.72 2.04 4.72 4.72 0 2.56-2.16 4.72-4.72 4.72zm4.84-8.84c-.655 0-1.185-.53-1.185-1.185 0-.655.53-1.185 1.185-1.185.655 0 1.185.53 1.185 1.185 0 .655-.53 1.185-1.185 1.185z"/>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@diegoxerez_aduanas" target="_blank" aria-label="TikTok de Diego Jerez" class="text-gray-400 hover:text-white transition duration-300">
+                    <!-- Icono TikTok SVG (simulación de doble color) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 0.007c-.161 0-.323.004-.484.012l-.096.007c-2.454.123-4.57 2.073-4.664 4.524v6.864c-.09 2.545-2.348 4.5-4.88 4.492h-.04c-.38 0-.756.036-1.127.106V21c.883-.162 1.776-.328 2.67-.498 3.597-.68 6.516-3.79 6.516-7.558V9.16l3.59-.897c.502-.125.864-.59.864-1.124v-4.11c0-.42-.315-.78-.716-.867C16.323.084 16.09.007 16 0.007z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <p>&copy; <span id="currentYear"></span> Diego Jerez | Despachante de Aduana. Todos los derechos reservados.</p>
+            <p class="mt-2 text-sm">Oficina Central: [Tu Ciudad y País] | Matrícula Profesional: [XXXX] | <a href="#" class="hover:text-white underline">Aviso Legal</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para la interactividad: Contador, Animaciones al Scroll, Lógica de Formulario -->
+    <script>
+        // === 1. LÓGICA DE CONTADOR ANIMADO ===
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            let current = 0;
+            const duration = 2000; // 2 segundos
+            const increment = target / (duration / 16); // ~60 FPS
+
+            const updateCount = () => {
+                current += increment;
+                if (current < target) {
+                    el.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.textContent = target;
+                }
+            };
+            requestAnimationFrame(updateCount);
+        }
+
+        // === 2. LÓGICA DE ANIMACIÓN AL SCROLL (Intersection Observer) ===
+        const animatedElements = document.querySelectorAll('.animated-item');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Si es la sección de métricas, iniciar el contador
+                    if (entry.target.querySelector('.counter')) {
+                        document.querySelectorAll('.counter').forEach(animateCounter);
+                    }
+                    observer.unobserve(entry.target); // Dejar de observar después de la animación
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.1 // Inicia la animación cuando el 10% del elemento es visible
+        });
+
+        // Observar cada elemento que debe animarse
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // === 3. LÓGICA DE FORMULARIO (Se mantiene la simulación) ===
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const submitButton = document.getElementById('submitButton');
+            const responseMessage = document.getElementById('responseMessage');
+
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+            submitButton.classList.remove('bg-primary', 'hover:bg-blue-700', 'cta-pulse');
+            submitButton.classList.add('bg-gray-500');
+            responseMessage.classList.add('hidden');
+
+            setTimeout(() => {
+                const success = true; 
+
+                if (success) {
+                    responseMessage.textContent = '¡Mensaje Enviado! Diego te contactará pronto para agendar tu llamada.';
+                    responseMessage.classList.remove('text-red-600', 'hidden');
+                    responseMessage.classList.add('text-green-600', 'block');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    responseMessage.textContent = 'Ocurrió un error. Por favor, revisa tus datos o intenta nuevamente.';
+                    responseMessage.classList.remove('text-green-600', 'hidden');
+                    responseMessage.classList.add('text-red-600', 'block');
+                }
+
+                submitButton.textContent = 'Agendar Llamada Ahora';
+                submitButton.disabled = false;
+                submitButton.classList.remove('bg-gray-500');
+                submitButton.classList.add('bg-primary', 'hover:bg-blue-700', 'cta-pulse');
+            }, 1500);
+        });
+
+        // Ocultar el video si da error de carga
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo) {
+            heroVideo.onerror = () => {
+                console.error("Error al cargar el video de fondo. Usando fondo sólido.");
+                document.getElementById('hero').style.background = 'linear-gradient(135deg, #1D4ED8, #0F172A)';
+                document.querySelector('.hero-overlay').style.display = 'none';
+                heroVideo.style.display = 'none';
+            };
+        }
+    </script>
+</body>
+</html>
